@@ -13,6 +13,11 @@ jobs:
     runs-on: self-hosted
 
     steps:
+      - name: Setup Node.js  # 🛠️ Fix: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+            node-version: '18'  # You can change to '16' or '20' as needed
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
