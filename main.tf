@@ -2,7 +2,7 @@ terraform {
   required_providers {
     proxmox = {
       source = "danitso/Proxmox"
-      version = "2.8.0"
+      version = "0.4.4"
     }
   }
 }
