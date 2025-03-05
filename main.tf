@@ -8,7 +8,7 @@ terraform {
 }
 
 # Define variables
-variable "proxmox_password" {
+variable "PROXMOX_PASSWORD" {
   description = "Proxmox API password"
   type        = string
 }
@@ -16,7 +16,7 @@ variable "proxmox_password" {
 provider "proxmox" {
   pm_api_url = "https://192.168.0.3:8006/api2/json"
   pm_user    = "root@pam"
-  pm_password = var.proxmox_password
+  pm_password = var.PROXMOX_PASSWORD
   pm_tls_insecure = true
 }
 
@@ -32,6 +32,6 @@ resource "proxmox_lxc" "example_lxc" {
     ip      = "dhcp"
   }
   rootfs      = "local:2"  # Define storage and size for rootfs (local:2 means 2GB)
-  password    = var.proxmox_password
+  password    = var.PROXMOX_PASSWORD
   swap        = 128   # Swap in MB
 }

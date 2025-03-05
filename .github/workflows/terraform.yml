@@ -18,6 +18,10 @@ jobs:
         with:
             node-version: '18'  # You can change to '16' or '20' as needed
 
+      - name: Set up Proxmox provider
+        run: |
+           echo "PROXMOX_PASSWORD=${{ secrets.PROXMOX_PASSWORD }}" >> $GITHUB_ENV
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
