@@ -41,3 +41,5 @@ jobs:
       - name: Terraform Apply
         if: github.event_name == 'push'
         run: terraform apply -auto-approve
+        env:
+            PROXMOX_PASSWORD: ${{ secrets.PROXMOX_PASSWORD }}
